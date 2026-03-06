@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kujira LLC / kujira合同会社</title>
+<meta name="description" content="Kujira LLC / kujira合同会社 - Used vehicle export support and car rental service based in Fukuoka, Japan.">
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+  line-height:1.7;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+}
+
+header{
+  background:#0b3d5c;
+  color:#fff;
+  padding:14px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-wrap img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+}
+
+.logo-text{
+  font-weight:bold;
+  font-size:20px;
+}
+
+nav a{
+  color:#fff;
+  margin-left:18px;
+  font-weight:bold;
+}
+
+.lang-switch{
+  text-align:center;
+  padding:16px 10px;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.lang-switch button{
+  padding:8px 14px;
+  margin:0 6px;
+  border:1px solid #cbd5e1;
+  background:#fff;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.lang-switch button:hover{
+  background:#eef6fb;
+}
+
+.hero{
+  min-height:520px;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("hero_port.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  color:#fff;
+}
+
+.hero-box{
+  background:rgba(0,0,0,0.45);
+  padding:34px 40px;
+  border-radius:16px;
+  max-width:820px;
+}
+
+.hero-box h1{
+  margin:0 0 12px;
+  font-size:42px;
+}
+
+.hero-box p{
+  margin:0;
+  font-size:20px;
+}
+
+.section{
+  padding:90px 20px;
+}
+
+.section-inner{
+  max-width:1180px;
+  margin:0 auto;
+}
+
+.section-title{
+  text-align:center;
+  font-size:36px;
+  margin:0 0 40px;
+  color:#0f172a;
+}
+
+/* 公司简介 */
+.about{
+  background:
+    linear-gradient(rgba(255,255,255,0.18), rgba(255,255,255,0.18)),
+    url("harbor_city.jpg") center/cover no-repeat;
+}
+
+.about-card{
+  max-width:820px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.94);
+  padding:42px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+  font-size:18px;
+}
+
+/* 业务内容 */
+.services{
+  background:
+    linear-gradient(rgba(255,255,255,0.20), rgba(255,255,255,0.20)),
+    url("auction_aerial.jpg") center/cover no-repeat;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.service-card{
+  background:rgba(255,255,255,0.95);
+  border-radius:16px;
+  padding:18px 18px 24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.16);
+  text-align:left;
+}
+
+.service-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:14px;
+}
+
+.service-card h3{
+  margin:0 0 10px;
+  font-size:24px;
+}
+
+.service-card p{
+  margin:0;
+}
+
+/* 出口流程 */
+.process{
+  background:
+    linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
+    url("office_blur.jpg") center/cover no-repeat;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  margin-bottom:34px;
+}
+
+.step{
+  background:rgba(255,255,255,0.96);
+  border-radius:14px;
+  padding:18px 14px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,0.14);
+  font-weight:bold;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.gallery img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* 新增板块：明确背景色 */
+.advantages{
+  background:linear-gradient(135deg,#eaf2f8,#f8fbfd);
+}
+
+.adv-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.adv{
+  background:#ffffff;
+  border:1px solid #dbe7f0;
+  border-radius:14px;
+  padding:22px 18px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  font-weight:bold;
+}
+
+.faq{
+  background:#eef2f6;
+}
+
+.faq-list{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.faq-item{
+  background:#ffffff;
+  border-radius:14px;
+  padding:22px 24px;
+  margin-bottom:18px;
+  text-align:left;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+}
+
+.faq-item strong{
+  display:block;
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+/* 联系我们 */
+.contact{
+  background:
+    linear-gradient(rgba(255,255,255,0.20), rgba(255,255,255,0.20)),
+    url("city.jpg") center/cover no-repeat;
+}
+
+.contact-box{
+  max-width:460px;
+  margin:0 auto;
+  background:rgba(0,0,0,0.58);
+  color:#fff;
+  padding:38px 28px;
+  border-radius:16px;
+  text-align:center;
+}
+
+.contact-box h2{
+  margin-top:0;
+  font-size:34px;
+}
+
+.contact-box p{
+  margin:14px 0;
+}
+
+footer{
+  background:#0b3d5c;
+  color:#fff;
+  text-align:center;
+  padding:18px 10px;
+}
+
+/* 语言切换 */
+[data-lang]{
+  display:none;
+}
+[data-lang].active{
+  display:block;
+}
+span[data-lang].active,
+strong[data-lang].active{
+  display:inline;
+}
+
+@media (max-width: 980px){
+  .service-grid,
+  .adv-grid,
+  .steps,
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-box h1{
+    font-size:34px;
+  }
+}
+
+@media (max-width: 680px){
+  header{
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+
+  nav a{
+    margin:0 8px;
+  }
+
+  .service-grid,
+  .adv-grid,
+  .steps,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:70px 16px;
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .about-card{
+    padding:28px 22px;
+    font-size:16px;
+  }
+
+  .hero-box{
+    padding:24px 20px;
+  }
+
+  .hero-box h1{
+    font-size:28px;
+  }
+
+  .hero-box p{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <img src="logo.png" alt="Kujira logo">
+    <div class="logo-text">Kujira LLC / kujira合同会社</div>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Export</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="lang-switch">
+  <button onclick="setLang('zh')">中文</button>
+  <button onclick="setLang('jp')">日本語</button>
+  <button onclick="setLang('en')">English</button>
+</div>
+
+<section class="hero">
+  <div class="hero-box">
+    <div data-lang="zh" class="active">
+      <h1>Kujira LLC / kujira合同会社</h1>
+      <p>日本中古车出口与租车服务</p>
+    </div>
+    <div data-lang="jp">
+      <h1>Kujira LLC / kujira合同会社</h1>
+      <p>日本中古車輸出・レンタカーサービス</p>
+    </div>
+    <div data-lang="en">
+      <h1>Kujira LLC / kujira合同会社</h1>
+      <p>Japanese Used Car Export & Rental Service</p>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <h2 class="section-title">公司简介</h2>
+      <div class="about-card">
+        kujira合同会社是一家位于日本福冈的汽车相关服务企业。<br><br>
+        公司主要从事日本中古车出口支持以及车辆相关服务，面向香港、中国大陆及东南亚地区客户提供车辆采购确认、出口流程协助以及物流安排等支持。<br><br>
+        同时，公司在福冈地区提供租车服务，可提供机场取车、九州地区送车取车服务，并提供ETC卡及儿童安全座椅等配套服务。
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <h2 class="section-title">会社概要</h2>
+      <div class="about-card">
+        kujira合同会社は福岡を拠点とする自動車関連サービス会社です。<br><br>
+        主に日本の中古車輸出サポートおよび車両関連サービスを行っており、香港、中国本土、東南アジアのお客様に向けて、車両確認、輸出手続き、物流手配などの対応を行っています。<br><br>
+        また、福岡地域においてレンタカーサービスも提供しており、空港での受け取り、九州全域での配車・返却、ETCカードおよびチャイルドシートの提供にも対応しています。
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <h2 class="section-title">Company Profile</h2>
+      <div class="about-card">
+        Kujira LLC is an automobile related service company based in Fukuoka, Japan.<br><br>
+        The company mainly provides used vehicle export support and related services for customers in Hong Kong, Mainland China and Southeast Asia, including vehicle confirmation, export procedures and logistics arrangements.<br><br>
+        In addition, we provide car rental services in the Fukuoka area, including airport pickup, vehicle delivery across Kyushu, ETC cards and child safety seats.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <h2 class="section-title">业务内容</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="export.jpg" alt="Export service">
+          <h3>中古车出口支持</h3>
+          <p>根据客户需求协助车辆确认、出口手续安排及物流协调。</p>
+        </div>
+        <div class="service-card">
+          <img src="auction.jpg" alt="Vehicle sourcing">
+          <h3>车辆采购确认</h3>
+          <p>根据日本拍卖及流通信息协助确认符合需求的车辆。</p>
+        </div>
+        <div class="service-card">
+          <img src="rental.jpg" alt="Car rental">
+          <h3>租车服务</h3>
+          <p>提供福冈机场取车、九州送车取车服务，并可提供ETC卡及儿童座椅。</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <h2 class="section-title">サービス</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="export.jpg" alt="Export service">
+          <h3>中古車輸出サポート</h3>
+          <p>お客様の要望に応じて、車両確認、輸出手続き、物流調整を行います。</p>
+        </div>
+        <div class="service-card">
+          <img src="auction.jpg" alt="Vehicle sourcing">
+          <h3>車両確認・手配</h3>
+          <p>日本のオークションや流通情報をもとに、条件に合う車両確認を行います。</p>
+        </div>
+        <div class="service-card">
+          <img src="rental.jpg" alt="Car rental">
+          <h3>レンタカーサービス</h3>
+          <p>福岡空港での受け取り、九州での配車・返却、ETCカードやチャイルドシートにも対応しています。</p>
+        </div>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <h2 class="section-title">Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="export.jpg" alt="Export service">
+          <h3>Used Vehicle Export Support</h3>
+          <p>We assist with vehicle confirmation, export procedures and logistics arrangements according to customer requests.</p>
+        </div>
+        <div class="service-card">
+          <img src="auction.jpg" alt="Vehicle sourcing">
+          <h3>Vehicle Sourcing Support</h3>
+          <p>We help confirm suitable vehicles based on Japanese auction and circulation information.</p>
+        </div>
+        <div class="service-card">
+          <img src="rental.jpg" alt="Car rental">
+          <h3>Car Rental Service</h3>
+          <p>We provide Fukuoka airport pickup, vehicle delivery across Kyushu, ETC cards and child safety seats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="process">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <h2 class="section-title">出口流程</h2>
+      <div class="steps">
+        <div class="step">1 客户咨询</div>
+        <div class="step">2 车辆确认</div>
+        <div class="step">3 文件准备</div>
+        <div class="step">4 装箱作业</div>
+        <div class="step">5 海运运输</div>
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <h2 class="section-title">輸出流れ</h2>
+      <div class="steps">
+        <div class="step">1 お問い合わせ</div>
+        <div class="step">2 車両確認</div>
+        <div class="step">3 書類準備</div>
+        <div class="step">4 コンテナ積込</div>
+        <div class="step">5 海上輸送</div>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <h2 class="section-title">Export Process</h2>
+      <div class="steps">
+        <div class="step">1 Inquiry</div>
+        <div class="step">2 Vehicle Check</div>
+        <div class="step">3 Documentation</div>
+        <div class="step">4 Container Loading</div>
+        <div class="step">5 Ocean Shipping</div>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <img src="container1.jpg" alt="Container loading 1">
+      <img src="container2.jpg" alt="Container loading 2">
+      <img src="container3.jpg" alt="Container loading 3">
+      <img src="container4.jpg" alt="Container loading 4">
+    </div>
+  </div>
+</section>
+
+<section class="section advantages">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="adv-grid">
+        <div class="adv">日本本地汽车相关服务公司</div>
+        <div class="adv">熟悉中古车出口流程</div>
+        <div class="adv">面向香港及亚洲客户</div>
+        <div class="adv">福冈机场取车服务</div>
+        <div class="adv">九州送车取车支持</div>
+        <div class="adv">ETC卡与儿童座椅提供</div>
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="adv-grid">
+        <div class="adv">日本国内の自動車関連サービス会社</div>
+        <div class="adv">中古車輸出の流れに対応</div>
+        <div class="adv">香港・アジア向け対応</div>
+        <div class="adv">福岡空港での受け取り可</div>
+        <div class="adv">九州での配車・返却対応</div>
+        <div class="adv">ETCカード・チャイルドシート提供</div>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="adv-grid">
+        <div class="adv">Japan based automotive service company</div>
+        <div class="adv">Familiar with used car export flow</div>
+        <div class="adv">Support for Hong Kong and Asia markets</div>
+        <div class="adv">Fukuoka airport pickup available</div>
+        <div class="adv">Vehicle delivery across Kyushu</div>
+        <div class="adv">ETC cards and child seats available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>是否可以出口到香港？</strong>
+          可以，目前可面向香港及亚洲地区客户提供中古车出口支持。
+        </div>
+        <div class="faq-item">
+          <strong>租车是否提供ETC和儿童座椅？</strong>
+          可以，根据需要可提供ETC卡及儿童安全座椅。
+        </div>
+        <div class="faq-item">
+          <strong>是否可以九州地区送车取车？</strong>
+          可以，可提供九州地区送车及还车相关服务。
+        </div>
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>香港への輸出は可能ですか？</strong>
+          はい、香港およびアジア地域向けの中古車輸出サポートに対応しています。
+        </div>
+        <div class="faq-item">
+          <strong>レンタカーでETCやチャイルドシートは利用できますか？</strong>
+          はい、ご希望に応じてETCカードおよびチャイルドシートを用意できます。
+        </div>
+        <div class="faq-item">
+          <strong>九州での配車・返却は可能ですか？</strong>
+          はい、九州地域での配車および返却サービスに対応しています。
+        </div>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <strong>Can you export vehicles to Hong Kong?</strong>
+          Yes, we provide used vehicle export support for customers in Hong Kong and other Asian markets.
+        </div>
+        <div class="faq-item">
+          <strong>Do you provide ETC cards and child seats for rental cars?</strong>
+          Yes, ETC cards and child safety seats can be arranged upon request.
+        </div>
+        <div class="faq-item">
+          <strong>Do you offer vehicle delivery across Kyushu?</strong>
+          Yes, we provide delivery and return support across the Kyushu area.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="section-inner">
+    <div data-lang="zh" class="active">
+      <div class="contact-box">
+        <h2>联系我们</h2>
+        <p>Email<br>info.kujira.japan@gmail.com</p>
+        <p>WeChat<br>Kujira2025</p>
+        <p>Phone<br>+81 (0)92-303-8067</p>
+        <p>Location<br>Fukuoka, Kyushu, Japan</p>
+      </div>
+    </div>
+
+    <div data-lang="jp">
+      <div class="contact-box">
+        <h2>お問い合わせ</h2>
+        <p>Email<br>info.kujira.japan@gmail.com</p>
+        <p>WeChat<br>Kujira2025</p>
+        <p>Phone<br>+81 (0)92-303-8067</p>
+        <p>Location<br>Fukuoka, Kyushu, Japan</p>
+      </div>
+    </div>
+
+    <div data-lang="en">
+      <div class="contact-box">
+        <h2>Contact</h2>
+        <p>Email<br>info.kujira.japan@gmail.com</p>
+        <p>WeChat<br>Kujira2025</p>
+        <p>Phone<br>+81 (0)92-303-8067</p>
+        <p>Location<br>Fukuoka, Kyushu, Japan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Kujira LLC / kujira合同会社
+</footer>
+
+<script>
+function setLang(lang){
+  const allBlocks = document.querySelectorAll('[data-lang]');
+  allBlocks.forEach(el => el.classList.remove('active'));
+
+  const targetBlocks = document.querySelectorAll('[data-lang="' + lang + '"]');
+  targetBlocks.forEach(el => el.classList.add('active'));
+}
+</script>
+
+</body>
+</html>
