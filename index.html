@@ -722,14 +722,17 @@ strong[data-lang].active{
   © 2026 Kujira LLC / kujira合同会社
 </footer>
 
-<script>
-function setLang(lang){
-  const allBlocks = document.querySelectorAll('[data-lang]');
-  allBlocks.forEach(el => el.classList.remove('active'));
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = 'none';
+  });
 
-  const targetBlocks = document.querySelectorAll('[data-lang="' + lang + '"]');
-  targetBlocks.forEach(el => el.classList.add('active'));
+  document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => {
+    el.style.display = 'block';
+  });
 }
+
+setLang('zh');
 </script>
 
 </body>
